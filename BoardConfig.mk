@@ -40,5 +40,11 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 4865261568 # 4751232 * 1024 mmcblk0p42
 # Power
 TARGET_POWERHAL_HEADER_PATH := $(DEVICE_PATH)/power
 
+# ART: Enable dex-preoptimization to speed up first boot sequence
+WITH_DEXPREOPT := true
+WITH_DEXPREOPT_PIC := false
+WITH_DEXPREOPT_COMP := false
+PRODUCT_DEX_PREOPT_DEFAULT_FLAGS := --compiler-filter=everything
+
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop

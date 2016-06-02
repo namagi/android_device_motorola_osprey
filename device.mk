@@ -46,6 +46,14 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_PACKAGES += \
     init.target.rc
 
+# ART
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dex2oat-filter=everything \
+    dalvik.vm.dex2oat-flags=--no-watch-dog \
+    dalvik.vm.image-dex2oat-filter=everything \
+    dalvik.vm.dex2oat-swap=false
+
+
 # Low RAM device optimizations
 ADDITIONAL_BUILD_PROPERTIES += \
     ro.config.low_ram=true \
