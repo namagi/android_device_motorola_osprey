@@ -45,3 +45,11 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.target.rc
+
+# Low RAM device optimizations
+ADDITIONAL_BUILD_PROPERTIES += \
+    ro.config.low_ram=true \
+    persist.sys.force_highendgfx=true \
+    config.disable_atlas=true \
+    #ro.config.max_starting_bg=8 \
+    #ro.sys.fw.bg_apps_limit=16
